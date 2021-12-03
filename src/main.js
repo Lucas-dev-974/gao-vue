@@ -1,8 +1,16 @@
 import Vue from 'vue'
-import App from './App.vue'
+import router from './router'
+import vuetify from 'vuetify'
+import Layout from './components/Layout.vue'
+import store from './store'
 
+Vue.use(vuetify)
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router: router,
+  vuetify: new vuetify(),
+  render: h => h(Layout),
+  store,
+  el: '#app'
+})
